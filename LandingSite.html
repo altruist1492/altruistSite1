@@ -3,27 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimalist Landing Page</title>
+    <title>Pumpkin Pie Recipe</title>
     <style>
         body {
-            background-color: #2f4f2f; /* Pale dark green */
-            color: black; /* Black text */
-            font-family: 'Courier New', Courier, monospace; /* Techy look */
-            text-align: center; /* Centered text */
-            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
             padding: 20px;
         }
-        h1 {
-            font-weight: bold; /* Bold text */
-            margin: 20px 0; /* Space around the text */
+        .recipe-box {
+            background-color: #fff;
+            border: 2px solid #d35400;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        iframe {
-            margin-top: 20px; /* Space above the iframe */
+        h1, h2 {
+            color: #d35400;
+            text-align: center;
+        }
+        ul, ol {
+            margin: 10px 0;
+        }
+        .notes, .license {
+            font-style: italic;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Thanks for visiting this page!<br>The time is:</h1>
-    <iframe src="https://free.timeanddate.com/clock/i9lhsk6m/n179/fn2/fs20/pc393/ftb/pa2/tt0/ta1/tb4" frameborder="0" width="359" height="60"></iframe>
+
+<div class="recipe-box">
+    <h1>Pumpkin Pie (Yields 7 Pies)</h1>
+
+    <h2>Ingredients</h2>
+    <ul>
+        <li>10 eggs</li>
+        <li>2 cups light brown sugar</li>
+        <li>2 cups dark brown sugar</li>
+        <li>5 tsp cinnamon</li>
+        <li>2 tsp ginger</li>
+        <li>2 tsp nutmeg</li>
+        <li>1/2 tsp allspice</li>
+        <li>2-1/2 tsp salt</li>
+        <li>10 cups pureed pumpkin or winter squash</li>
+        <li>1 can evaporated milk</li>
+        <li>2 cups heavy cream</li>
+        <li>1 quart milk</li>
+    </ul>
+
+    <h2>Instructions</h2>
+    <ol>
+        <li>Preheat the oven to 425°F (220°C).</li>
+        <li>In a large bowl, beat the eggs until smooth.</li>
+        <li>Gradually add the light brown sugar, dark brown sugar, cinnamon, ginger, nutmeg, allspice, and salt, mixing well after each addition.</li>
+        <li>Stir in the pureed pumpkin or winter squash, evaporated milk, heavy cream, and milk. Mix until fully blended.</li>
+        <li>Pour the mixture into prepared pie crusts.</li>
+        <li>Bake at 425°F for 15 minutes, then reduce the heat to 345°F and continue baking for 1 hour, or until set.</li>
+        <li>Allow to cool before serving.</li>
+    </ol>
+
+    <div class="notes">
+        <h2>Notes</h2>
+        <p>The batter will be very runny until baked. When done baking, the centers will still be slightly wiggly but not soupy. After cooling, the pies will firm up and slices will retain their shape.</p>
+        <p>Serve with a dollop of whipped cream for extra indulgence.</p>
+    </div>
+
+    <div class="license">
+        <h2>License</h2>
+        <p>This recipe is licensed under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">Creative Commons Zero (CC0)</a> license.</p>
+    </div>
+</div>
+
 </body>
 </html>
