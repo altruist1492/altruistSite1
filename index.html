@@ -6,25 +6,39 @@
     <title>Minimalist Landing Page</title>
     <style>
         body {
+            background-image: url('https://github.com/altruist1492/altruistSite1/blob/main/RhinosAtSunset.jpg?raw=true'); /* Replace with your image URL */
+            background-size: contain; /* Scale the image to fit without cropping */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
             background-color: #2f4f2f; /* Pale dark green */
             color: black; /* Black text */
             font-family: 'Courier New', Courier, monospace; /* Techy look */
-            text-align: center; /* Centered text */
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            display: flex; /* Use flexbox */
+            flex-direction: column; /* Arrange items vertically */
+            justify-content: flex-start; /* Start at the top */
+            align-items: center; /* Center items horizontally */
+            height: 100vh; /* Full viewport height */
         }
         h1 {
             font-weight: bold; /* Bold text */
             margin: 20px 0; /* Space around the text */
+            padding: 20px; /* Padding inside the h1 */
+            background-color: white; /* White background */
+            text-align: center; /* Center text */
+            border-radius: 8px; /* Optional: rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
         }
         iframe {
-            margin-top: 20px; /* Space above the iframe */
+            margin-top: 10px; /* Space above the iframe */
+            margin-bottom: 20px; /* Space below the iframe */
+            display: block; /* Ensures iframe is treated as a block element */
         }
     </style>
 </head>
 <body>
     <h1>Thanks for visiting this page!<br>The time is:</h1>
     <iframe src="https://free.timeanddate.com/clock/i9lhsk6m/n179/fn2/fs20/pc393/ftb/pa2/tt0/ta1/tb4" frameborder="0" width="359" height="60"></iframe>
-
 </body>
 </html>
