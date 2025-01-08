@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSON to Pivoted Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>JSON to Pivoted Table</h1>
+  <textarea id="jsonInput" placeholder="Paste your JSON here..."></textarea><br>
+  <button onclick="generateTable()">Generate Table</button>
+  <div id="output"></div>
+
+  <script>
+    function generateTable() {
+      const input = document.getElementById('jsonInput').value;
+
+      try {
+        const data = JSON.parse(input);
+
+        // Prepare rows
+        const rows = data.map(entry => {
+          const transaction = entry.transactionInformation;
+          const detail = transaction.transactionDetailInformation;
+
+          return {
+            "Company ID": transaction.companyId,
+            "Period": transaction.period,
+            "Transaction Date": transaction.transactionDate,
+            "Transaction Type": transaction.transactionType,
+            "Transaction Number": transaction.transactionNumber,
+            "Sequence Number": detail.sequenceNumber,
+            "Line Type": detail.lineType,
+            "Description": detail.description,
+            "Account": detail.accountingInformation.account,
+            "Dimension 1": detail.accountingInformation.accountingDimension1,
+            "Dimension 2": detail.accountingInformation.accountingDimension2,
+            "Dimension 3": detail.accountingInformation.accountingDimension3,
+            "Dimension 4": detail.accountingInformation.accountingDimension4,
+            "Dimension 5": detail.accountingInformation.accountingDimension5,
+            "Dimension 6": detail.accountingInformation.accountingDimension6,
+            "Dimension 7": detail.accountingInformation.accountingDimension7,
+            "Amount (USD)": detail.amounts.amount,
+            "Currency Amount": detail.amounts.currencyAmount,
+            "Tax Code": detail.taxInformation.taxCode,
+            "Tax System": detail.taxInformation.taxSystem,
+            "External Archive Ref": transaction.additionalInformation.externalArchiveReference,
+            "Invoice Ref": transaction.invoice.externalReference
+          };
+        });
+
+        // Generate table
+        const headers = Object.keys(rows[0]);
+        let table = '<table><thead><tr>';
+        headers.forEach(header => {
+          table += `<th>${header}</th>`;
+        });
+        table += '</tr></thead><tbody>';
+        rows.forEach(row => {
+          table += '<tr>';
+          headers.forEach(header => {
+            table += `<td>${row[header]}</td>`;
+          });
+          table += '</tr>';
+        });
+        table += '</tbody></table>';
+
+        document.getElementById('output').innerHTML = table;
+      } catch (error) {
+        document.getElementById('output').innerHTML = '<p style="color: red;">Invalid JSON format. Please check your input.</p>';
+      }
+    }
+  </script>
+</body>
+</html>
